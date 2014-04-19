@@ -16,3 +16,5 @@ If you want to build your own, this [instruction from the course](https://course
 
     $ git clone https://github.com/zanqi/CrashReporter.git
     $ git checkout ee221c65588ad643114fdbf74d41cb2f6950aeba
+
+Have fun!
