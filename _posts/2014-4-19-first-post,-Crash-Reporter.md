@@ -2,7 +2,7 @@
 layout: post
 category: lessons
 tagline:
-tags: [intro]
+tags: [ELF, project]
 ---
 {% include JB/setup %}
 
@@ -16,5 +16,16 @@ If you want to build your own, this [instruction from the course](https://course
 
     $ git clone https://github.com/zanqi/CrashReporter.git
     $ git checkout ee221c65588ad643114fdbf74d41cb2f6950aeba
+
+### Hints
+
+One behavior of the kernel can caused one time to wrap his head around:
+
+>The top of the stack is a little wonky after a signal because the innermost stack frame is forced off and replaced by the kernel's signal-dispatching function.
+
+Therefore, to compose the full picture of the stack trace, you must piece the information from two sources together:
+
+1. from the signal handler caller chain
+2. from the %eip stored in the signal context. This is to recover the frame that is forced off by kernel.
 
 Have fun!
