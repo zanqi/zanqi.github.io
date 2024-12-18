@@ -18,7 +18,8 @@ mathjax: true
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "index.md"}
-  - {file: "blogs.md"}
+  - {file: "posts.md"}
+  - {file: "/files/cv_zanqi.pdf", title: "CV", icon: "file-pdf"}
   - {file: "README.md"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
