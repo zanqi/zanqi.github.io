@@ -35,6 +35,7 @@ To win the election in this specific partition, our candidate (Server 5) needed 
 
 ![Paxos Partition Diagram](/images/partition.png)
 
+
 ## The Clues: Doing the Math
 
 The logs showed the system failing to elect a leader **4 times in a row** before finally succeeding on the 5th try. Each attempt took about 400ms (the election timeout).
