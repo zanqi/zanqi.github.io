@@ -1,7 +1,7 @@
-# Project Context: Zanqi's Personal Website
+# Project Context: Critical Section (Zanqi's Personal Website)
 
 ## Overview
-This project is a personal website and blog titled "Learn From Scratch" hosted on GitHub Pages using [Jekyll](https://jekyllrb.com/). It serves as a platform for the author (Zanqi Liang) to share learning notes, research, and a CV.
+This project is a personal website and blog titled "Critical Section" hosted on GitHub Pages using [Jekyll](https://jekyllrb.com/). It serves as a platform for the author (Zanqi Liang) to share learning notes, research, and a CV.
 
 ## Architecture
 *   **Framework:** Jekyll (Static Site Generator)
