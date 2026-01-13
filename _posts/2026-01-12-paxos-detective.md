@@ -27,7 +27,7 @@ Crucially, the candidate needs a **Majority** (Quorum) of promises to become the
 ### The Scene of the Crime
 
 Our test environment (`Test 18`) was hostile by design:
-*   **5 Servers Total:** A majority requires $\lfloor \frac{5}{2} \rfloor + 1 = 3$ votes.
+*   **5 Servers Total:** A majority requires $$\lfloor \frac{5}{2} \rfloor + 1 = 3$$ votes.
 *   **Partition:** The network was split. Our candidate was stuck in a partition with exactly **3 servers** (Servers 2, 3, and 5). It had no access to the other two.
 *   **Unreliable Network:** The test forced a **20% packet loss** rate.
 
@@ -40,15 +40,15 @@ To win the election in this specific partition, our candidate (Server 5) needed 
 
 The logs showed the system failing to elect a leader **4 times in a row** before finally succeeding on the 5th try. Each attempt took about 400ms (the election timeout).
 
-$400ms \times 5 \approx 2.0s$.
+$$400ms \times 5 \approx 2.0s$$
 
 There was our 2-second delay. But was this bad luck, or was the system destined to fail? Let's calculate the **Probability of Success**.
 
 ### 1. The Probability of a Single Link
-We have a 20% drop rate. That means a packet has an $0.8$ chance of arrival.
+We have a 20% drop rate. That means a packet has an $$0.8$$ chance of arrival.
 For a leader to get a vote from *another* server, two things must happen:
-1.  The Request (P1a) must arrive ($0.8$).
-2.  The Response (P1b) must return ($0.8$).
+1.  The Request (P1a) must arrive ($$0.8$$).
+2.  The Response (P1b) must return ($$0.8$$).
 
 $$ P(\text{LinkSuccess}) = 0.8 \times 0.8 = 0.64 $$
 
@@ -62,9 +62,9 @@ We only had a **41% chance** to elect a leader in any given round. Consequently,
 
 ## The Verdict: Mean Time to Success (MTTS)
 
-This is a classic **Geometric Distribution**. We are flipping a coin that is weighted against us ($p=0.41$) and asking: "How many flips until we get a Head?"
+This is a classic **Geometric Distribution**. We are flipping a coin that is weighted against us ($$p=0.41$$) and asking: "How many flips until we get a Head?"
 
-The **Expected Number of Rounds** ($E[R]$) is the inverse of the success probability:
+The **Expected Number of Rounds** ($$E[R]$$) is the inverse of the success probability:
 
 $$ E[R] = \frac{1}{P(\text{RoundSuccess})} = \frac{1}{0.4096} \approx 2.44 \text{ rounds} $$
 
