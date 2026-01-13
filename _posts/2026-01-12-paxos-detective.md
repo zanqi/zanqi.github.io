@@ -33,7 +33,7 @@ Our test environment (`Test 18`) was hostile by design:
 
 To win the election in this specific partition, our candidate (Server 5) needed votes from **every single reachable server** (itself + Server 2 + Server 3). If it missed even one P1b response, the election failed.
 
-[![Paxos Partition Diagram](/images/partition.png)
+![Paxos Partition Diagram](/images/partition.png)
 
 ## The Clues: Doing the Math
 
@@ -81,7 +81,7 @@ $$ P(\text{4 Failures}) = 0.59^4 \approx 0.12 $$
 
 There was a **12% chance** that any run of this test would take at least 5 rounds. In the world of automated testing (and distributed systems), 12% is not an edge case; it's a certainty.
 
-[![Timeline of Election Rounds](/images/election.png)
+![Timeline of Election Rounds](/images/election.png)
 
 ## Conclusion
 
