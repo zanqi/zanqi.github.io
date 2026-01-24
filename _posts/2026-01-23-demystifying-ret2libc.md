@@ -37,6 +37,7 @@ The trick is to meticulously construct the stack such that, when a `ret` instruc
 [ Address of String Argument          ]  <-- Argument 1 for system() (e.g., "/bin/sh")
 ```
 
+
 <!-- IMAGE: Detailed diagram of the crafted stack frame for a Ret2Libc attack, showing padding, system() address, fake return address, and argument. -->
 
 When `system()` begins execution, it treats the address immediately following its own address on the stack as its return address, and the next address as its first argument. Our crafted stack prepares exactly this scenario.
